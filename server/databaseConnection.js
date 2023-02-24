@@ -20,5 +20,6 @@ const cntion = db.connect((err, res) => {
 })
 
 module.exports = {
-    cntion
+    cntion,
+    dbOptions
 }

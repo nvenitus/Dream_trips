@@ -5,20 +5,12 @@ const MYSQLStore = require('express-mysql-session')(session);
 const  passport = require('passport');
 const bodyParser = require('body-parser');
 
-const connection = require('./databaseConnection.js');
+const {cntion, dbOptions}= require('./databaseConnection.js');
 const MySQLStore = require('express-mysql-session');
 const app = express();
 const PORT = 3000;
 
-const options = {
-    port: a,
-    host: b,
-    database: c,
-    user: d,
-    password: e    
-}
-
-const sessionStore = new MySQLStore(options)
+const sessionStore = new MySQLStore(dbOptions);
 express.use(session({
     key: "no key",
     store: sessionStore,
