@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%; height: 100vh;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+#welcome{
+    color: white;
+    font-size:50px;
+    font-weight: bolder;
+    text-align: center;
+    position: absolute;
+    top: 25%; left: 3%;
+}
+#logo img{
+    width: 15cm;
+    position: absolute;
+    transform: translate(-3%,5%);
+}
+#logo{
+    background-color:orangered;
+}
+#form{
+    background-color:  white;
+}
+form{
+    display: inline-block;
+    padding: 4% 6%;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    transform: translate(25%,20%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px 12px rgba(0, 0, 0, 0.2);
+}
+#email,#password{
+    padding: 10px;
+    width: 8cm;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    background-color: orangered;
+}
+#email::placeholder,#password::placeholder{
+    color: white;
+
+}
+#login{
+    padding: 10px;
+    width: 8.6cm;
+    border: none;
+    border-radius: 30px;
+    font-size: larger;
+    color:white;
+    font-weight: bold;
+    background-color:orangered;
+}
+
+.demail,.dpassword,.deye{
+    position: relative;
+}
+#eye{
+    width: 15px;
+}
+label{
+    color: orangered;
+    font-size: large;
+}
+.new{
+    color: blue;
+}
+.new a{
+    color:orangered;
+    text-decoration: none;
+}
