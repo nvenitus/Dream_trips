@@ -4,13 +4,18 @@ const session = require('express-session');
 const MYSQLStore = require('express-mysql-session')(session);
 const  passport = require('passport');
 const bodyParser = require('body-parser');
+const path = require('path');
 
-const {cntion, dbOptions}= require('./databaseConnection.js');
-const MySQLStore = require('express-mysql-session');
 const app = express();
 const PORT = 3000;
+//routes imports
+const loginRoute = require('./routes/login');
+const registrationRoute = require('./routes/register');
 
-const sessionStore = new MySQLStore(dbOptions);
+const {cntion, dbOptions}= require('./databaseConnection.js');
+const {verifycallback} = require('./function');
+
+const sessionStore = new MYSQLStore(dbOptions);
 express.use(session({
     key: "no key",
     store: sessionStore,
@@ -28,14 +33,21 @@ const fields = {
     phoneField: phnNumb
 }
 
-const strategy = new LocalStrategy(fields, /*a later used function */)
+//setting up the views
+app.set('view-engine', 'ejs');
+app.use(express.static(path.join(__dirname),"style"));
+app.set('views', path.join(__dirname), "views")
+
 passport.serializeUser()
 app.use(passport.session());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+const strategy = new LocalStrategy(fields, verifycallback);
+passport.use('localLogin', strategy);
+
 passport.serializeUser((user, done) =>{
-    done(false, user.id);
+    done(null, user.id);
 })
 passport.deserializeUser((userId, done) => {
     connection.cntion.query("SELECT * FROM NOTYETSETDB WHERE id = ?", [userId],
@@ -48,6 +60,10 @@ passport.deserializeUser((userId, done) => {
         }
     })
 })
+
+app.use('/', loginRoute);
+app.use('/', registrationRoute);
+
 app.listen(PORT, () =>{
     console.log(`The app runs on http://localhost:${PORT}`);
 })
