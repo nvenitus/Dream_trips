@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *::before, *::after{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            top: 0;
+            width: 100vw;
+            background: #234290;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0 5px;
+            align-items: center;
+        }
+        nav>.left>img{
+            width: 80px;
+            height: 80px;
+        }
+       nav>.right>ul{
+            display: flex;
+            flex-direction: rew;
+            align-items: center;
+            justify-content: space-evenly;
+            list-style: none;
+       } 
+
+       nav>.right>ul>li{
+            padding: 8px;
+            border-radius: 5px;                 
+            border: 1px solid black;
+       }
+
+       /* Here we work with the text above where we are to have images along them */
+        .card-zone{
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            padding: 5px 0;
+        }
+        .card-zone>.card{
+            width: 30%;
+            height: 150px;
+            box-shadow: 5px 5px 8px #234af4;
+            padding: 1px 3px;
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            align-items:center;
+            height: fit-content;
+        }
+        .card-zone>.card>.card-text-container>.card-text{
+                overflow-wrap: break-word;
+        }
+
+        /* Now the intro section with the image */
+        .intro{
+            width: 100vw;
+            padding: 0 0 0 18px;
+            margin: 0 0 25px 0;
+        }
+        aside{
+            width: 40%;
+        }
+        aside>p{
+            font-family: sans;
+            overflow-wrap: break-word;
+        }
+
+        /* Now the slideshow  */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* Now working with the footer */
+        .fa{
+            padding: 20px;
+            font-size: 30px;
+            width: 50px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+        .fa-facebook{
+            background: rgb(27, 99, 255);
+            color: white;
+        }
+        .fa-whatsapp{
+            background: rgb(33, 255, 33);
+            color: white;
+        }
+        .fa-instagram{
+            background: rgb(175, 5, 175);
+            color: white;
+        }
+        .sites{
+            display: grid;
+            grid-auto-flow: row dense;
+            gap: 10px;
+            grid-template: repeat(4, 1fr) / repeat(2, 1fr);        
+        }
+
+        /* Working with small screen sizes */
+        @media only screen and (max-width: 420px){
+            .card-zone{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .card-zone> .card{
+                width: 60%;
+                padding: 2px 5px;
+                margin: 3px 0;
+            }
+            /* Working with the introductory section */
+            .intro{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+            }
+            aside{
+                width: 60%;
+            }
+            .intro > aside > h2 {
+                text-align: center;
+            }
+
+            /* Working with the image text*/
+            .text {font-size: 11px}
+
+            footer > .sites{
+                grid-template: repeat(2, auto)/ repeat(2, auto);
+                align-items: self-end;
+                justify-content: space-evenly;
+            }
+        }
+
+    </style>
+    <title>Welcome screen</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="left">
+            <img src="../image/logo.png" alt="">
+        </div>
+        <div class="right">
+            <ul>
+                <li>Create accout</li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="card-zone">
+        <div class="card">
+            <div class="card-image">
+                <img src="" alt="">
+            </div>
+            <div class="card-text-container">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet,
+                 consectetur adipisicing elit. 
+                 Corporis ipsa voluptatibus 
+                 assumenda necessitatibus 
+                 eos consequuntur nobis, ex 
+                 doloribus quisquam iusto!
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="" alt="">
+            </div>
+            <div class="card-text-container">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet,
+                 consectetur adipisicing elit. 
+                 Corporis ipsa voluptatibus 
+                 assumenda necessitatibus 
+                 eos consequuntur nobis, ex 
+                 doloribus quisquam iusto!
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image">
+                <img src="" alt="">
+            </div>
+            <div class="card-text-container">
+                <p class="card-text">
+                Lorem ipsum dolor sit amet,
+                 consectetur adipisicing elit. 
+                 Corporis ipsa voluptatibus 
+                 assumenda necessitatibus 
+                 eos consequuntur nobis, ex 
+                 doloribus quisquam iusto!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="intro">
+        <aside>
+            <h2>What is Dream_Trip</h2>
+                <p>
+                Lorem ipsum dolor sit amet,
+                 consectetur adipisicing elit. 
+                 Corporis ipsa voluptatibus 
+                 assumenda necessitatibus 
+                 eos consequuntur nobis, ex 
+                 doloribus quisquam iusto!
+                </p>
+        </aside>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="../image/paynow.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="../image/pexels-mads-thomsen-1178448.jpg" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="../image/mobile1.jpg" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+    </div>
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+    <footer>
+        <div class="sites">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-whatsapp"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
+    </footer>
+    <script>
+        let slideIndex = 0;
+        slideShow();
+
+        function slideShow(){
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            //Iterating through all the elements in the array
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+
+            //Now working with the dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(slideShow, 4000); // Change image every 2 seconds
+        }
+    </script>
+</body>
+</html>
