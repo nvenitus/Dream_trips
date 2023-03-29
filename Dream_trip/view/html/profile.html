@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Profile</title>
+
+    <style>
+        .body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile{
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 4px;
+            width: 40%;
+            box-shadow: 6px 8px 4px cadetblue;
+        }
+        .profile > .zone{
+            display: flex;
+            align-items: center;
+            position: relative;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .profile > .zone > img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .profile > .zone > .name {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: beige;
+        }
+        .edit{
+            position: absolute;
+            top: 3px;
+            right: 5px;
+        }
+
+        @media screen and (max-width: 620px){
+            .profile {
+                width: 70%;
+            }
+            .profile > .zone {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="body">
+        <div class="profile">
+            <div class="zone">
+                <img src="../image/image1.jpg" alt="">
+                <h2 class="name">Suh Joy</h2>
+                <i class="fa fa-pencil fa-fw"></i>
+            </div>
+            
+            <p class="email">My@joy.com</p>
+            <p class="idNumb">234kjkls2432</p>
+            <p class="phnNumb">674504478</p>
+        </div>
+    </div>
+</body>
+</html>

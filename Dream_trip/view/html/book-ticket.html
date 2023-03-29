@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book ticket</title>
+    <style>
+        .select-zone{
+            display: flex;
+            width: 100vw;
+            align-items: center;
+            justify-content: 'center';
+            flex-direction: column;
+            padding: 20px;
+        }
+        .select-zone > select , .select-zone > input{
+            width: 50%;
+            margin: 10px 0;
+            padding: 5px 0;
+            font-size: larger;
+            border-radius: 9px;
+            background: none;
+            outline: none;
+        }
+        .select-zone > select:focus {
+            background: rgb(252, 188, 51);
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Book a ticket</h2>
+    <div class="select-zone">
+        <select name="From" id="">
+            <option value="Buea">Buea</option>
+            <option value="Bamenda">Bamenda</option>
+            <option value="Douala">Douala</option>
+            <option value="Yaounde">Yaounde</option>
+            <option value="Bafousam">Bafousam</option>
+        </select>
+        <select name="" id="">
+            <option value="Bafousam">Bafousam</option>
+            <option value="Yaounde">Yaounde</option>
+            <option value="Douala">Douala</option>
+            <option value="Bamenda">Bamenda</option>
+            <option value="Buea">Buea</option>
+        </select>
+
+        <input type="number" name="" id="" placeholder="Number of passengers">
+        
+        <select name="confort" id="">
+            <option value="Normal">Normal</option>
+            <option value="First-class">First-class</option>
+            <option value="VIP">VIP</option>
+            <option value="Legendary">Legendary</option>
+        </select>
+        <!-- Used to automatically update the price while the user inputs information -->
+        <div class="price"></div>
+
+    </div>
+</body>
+</html>
